@@ -16,11 +16,11 @@
     "test": "jest --verbose --json --outputFile=\"./logs/testLog.json\"",
     "test:watch": "jest --watchAll --verbose -bail",
     "test:coverage": "jest --verbose --coverage --json --outputFile=\"./logs/testLog.json\"",
-    "codelint": "eslint . --fix",
-    "stylint": "stylelint-config-prettier-check",
+    "codelint": "eslint . --fix > logs/lintLog.toml",
+    "stylint": "stylelint-config-prettier-check > logs/styLog.toml",
     "pretty": "pretty-quick --write  \"src/**/*.js\"",
     "prettystyl": "stylelint \"src/**/*.css\" --fix",
-    "logger": "concurrently npm:codelint > logs/lintLog.toml npm:stylint > logs/styLog.toml npm:test",
+    "logger": "concurrently npm:codelint npm:stylint npm:test",
     "fix": "concurrently npm:prettystyl npm:pretty npm:codelint"
   },
   "babel": {
