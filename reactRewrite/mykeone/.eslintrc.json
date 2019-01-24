@@ -1,9 +1,37 @@
 {
+  "root": true,
   "extends": [
-    "airbnb", "prettier"
+    "react-app", "airbnb", "prettier"
   ],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": ["error"]
+    "prettier/prettier": [
+      "error", {
+        "printWidth": 100,
+        "singleQuote": false
+      }
+    ],
+    "key-spacing": [
+      "error", {
+        "align": {
+          "beforeColon": true,
+          "afterColon": true,
+          "on": "colon"
+        }
+      }
+    ],
+    "max-len": [
+      "error", {
+        "code": 100,
+        "ignoreUrls": true
+      }
+    ],
+    "semi": [
+      "error", "always"
+    ],
+    "linebreak-style": 0,
+    "no-plusplus": 0,
+    "no-unused-vars": 0,
+    "no-param-reassign": 0
   }
 }
