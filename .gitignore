@@ -2,6 +2,7 @@
 
 # dependencies
 /reactRewrite/mykeone/node_modules
+/reactRewrite/mykeone/.env
 /.pnp
 .pnp.js
 
