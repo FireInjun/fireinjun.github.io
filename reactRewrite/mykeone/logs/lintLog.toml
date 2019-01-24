@@ -1,0 +1,48 @@
+
+> mykeone@0.1.0 codelint N:\fireinjun.github.io\reactRewrite\mykeone
+> eslint . --fix
+
+
+[4mN:\fireinjun.github.io\reactRewrite\mykeone\config\env.js[24m
+   [2m8:7[22m  [31merror[39m  Use object destructuring  [2mprefer-destructuring[22m
+  [2m31:5[22m  [31merror[39m  Unexpected require()      [2mglobal-require[22m
+  [2m32:7[22m  [31merror[39m  Unexpected require()      [2mglobal-require[22m
+
+[4mN:\fireinjun.github.io\reactRewrite\mykeone\config\paths.js[24m
+  [2m23:56[22m  [31merror[39m  Unexpected require()                                [2mglobal-require[22m
+  [2m23:56[22m  [31merror[39m  Calls to require() should use string literals       [2mimport/no-dynamic-require[22m
+  [2m53:47[22m  [31merror[39m  'extension' is already declared in the upper scope  [2mno-shadow[22m
+
+[4mN:\fireinjun.github.io\reactRewrite\mykeone\config\webpack.config.js[24m
+   [2m42:18[22m  [33mwarning[39m  Unexpected unnamed function      [2mfunc-names[22m
+   [2m86:13[22m  [31merror[39m    Unexpected require()             [2mglobal-require[22m
+   [2m87:13[22m  [31merror[39m    Unexpected require()             [2mglobal-require[22m
+  [2m113:15[22m  [31merror[39m    Do not nest ternary expressions  [2mno-nested-ternary[22m
+
+[4mN:\fireinjun.github.io\reactRewrite\mykeone\config\webpackDevServer.config.js[24m
+  [2m11:18[22m  [33mwarning[39m  Unexpected unnamed function                    [2mfunc-names[22m
+  [2m85:9[22m   [31merror[39m    Unexpected require()                           [2mglobal-require[22m
+  [2m85:9[22m   [31merror[39m    Calls to require() should use string literals  [2mimport/no-dynamic-require[22m
+
+[4mN:\fireinjun.github.io\reactRewrite\mykeone\scripts\build.js[24m
+   [2m26:7[22m   [31merror[39m  Use object destructuring                       [2mprefer-destructuring[22m
+   [2m27:7[22m   [31merror[39m  Use object destructuring                       [2mprefer-destructuring[22m
+   [2m98:26[22m  [31merror[39m  Unexpected require()                           [2mglobal-require[22m
+   [2m98:26[22m  [31merror[39m  Calls to require() should use string literals  [2mimport/no-dynamic-require[22m
+   [2m99:13[22m  [31merror[39m  Use object destructuring                       [2mprefer-destructuring[22m
+  [2m100:13[22m  [31merror[39m  Use object destructuring                       [2mprefer-destructuring[22m
+
+[4mN:\fireinjun.github.io\reactRewrite\mykeone\scripts\start.js[24m
+  [2m61:27[22m  [31merror[39m  `react-dev-utils/browsersHelper` import should occur before import of `../config/paths`  [2mimport/order[22m
+  [2m76:21[22m  [31merror[39m  Unexpected require()                                                                     [2mglobal-require[22m
+  [2m76:21[22m  [31merror[39m  Calls to require() should use string literals                                            [2mimport/no-dynamic-require[22m
+  [2m81:26[22m  [31merror[39m  Unexpected require()                                                                     [2mglobal-require[22m
+  [2m81:26[22m  [31merror[39m  Calls to require() should use string literals                                            [2mimport/no-dynamic-require[22m
+  [2m87:38[22m  [31merror[39m  Expected to return a value at the end of arrow function                                  [2mconsistent-return[22m
+
+[4mN:\fireinjun.github.io\reactRewrite\mykeone\scripts\test.js[24m
+  [2m16:22[22m  [31merror[39m  Jest is automatically in scope. Do not import "jest", as Jest doesn't export anything  [2mjest/no-jest-import[22m
+  [2m17:7[22m   [31merror[39m  Use object destructuring                                                               [2mprefer-destructuring[22m
+
+[31m[1m✖ 27 problems (25 errors, 2 warnings)[22m[39m
+[31m[1m[22m[39m
