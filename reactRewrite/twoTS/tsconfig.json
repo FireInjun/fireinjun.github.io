@@ -4,6 +4,7 @@
     "rootDir": "./src",
     "outDir": "./dev",
     "declaration": false,
+    "diagnostics": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
