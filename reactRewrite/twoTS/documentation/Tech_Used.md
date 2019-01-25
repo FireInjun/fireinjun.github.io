@@ -4,7 +4,6 @@
 
 ### Comprehensive list
 
-debug
 jest
 node
 react
@@ -23,3 +22,21 @@ pkg-ok
 styleint
 tslint
 styled components
+clang-format
+
+---
+
+## Testing
+
+jest
+enzyme
+puppeteer
+sinon
+ndb
+
+---
+
+## Commit Sanitizing
+
+husky
+lint-staged
