@@ -1,5 +1,0 @@
-# test folder
-/src/__tests__/*.js
-/node_modules/*
-/config/*
-/scripts/*
