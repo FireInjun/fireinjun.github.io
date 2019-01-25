@@ -1,10 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/reactRewrite/mykeone/node_modules
-/reactRewrite/mykeone/.env
-/reactRewrite/myketwo/node_modules
-/reactRewrite/myketwo/.env
+/reactRewrite/oneJS/node_modules
+/reactRewrite/oneJS/.env
+/reactRewrite/twoTS/node_modules
+/reactRewrite/twoTS/.env
 /.pnp
 .pnp.js
 
