@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "./img/logo.svg";
-import "./style/App.css";
+import "./style/App.scss";
 
 export class App extends Component {
   render() {
@@ -13,7 +13,11 @@ export class App extends Component {
             <code>src/App.tsx</code>
             and save to reload.
           </p>
-          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer">
             Learn React
           </a>
         </header>
