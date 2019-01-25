@@ -12,8 +12,14 @@ const commands = [
   '--system--add core.autocrlf false',
   'core.autocrlf'
 ]
-const resetglobal (arr => {
-  commands.forEach(command => {
-    shell.exec(config + command).code
-  });
+shell.echo(error)
+shell.echo(success)
+shell.echo(greeting)
+const resetglobal
+  for (let i = 0; i < commands.length; i += 1) {
+    shell.exec(config.concat(commands[i])
+  }
 }
+
+
+resetglobal()
