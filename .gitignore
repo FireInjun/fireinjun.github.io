@@ -3,6 +3,8 @@
 # dependencies
 /reactRewrite/mykeone/node_modules
 /reactRewrite/mykeone/.env
+/reactRewrite/myketwo/node_modules
+/reactRewrite/myketwo/.env
 /.pnp
 .pnp.js
 
