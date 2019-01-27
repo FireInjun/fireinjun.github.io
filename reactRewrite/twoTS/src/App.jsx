@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "./img/logo.svg";
 import "./style/App.scss";
-
+import { Background } from "./containers/background";
 export class App extends Component {
   render() {
     return (
@@ -13,6 +13,7 @@ export class App extends Component {
             <code>src/App.tsx</code>
             and save to reload.
           </p>
+          <Background />
           <a
             className="App-link"
             href="https://reactjs.org"
