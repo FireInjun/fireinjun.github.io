@@ -7,9 +7,12 @@ import React, {Component} from 'react';
 import loadingImage from './loading.gif';
 import fetchData from './utils/export';
 
-class App extends Component {
+export class App extends Component {
   canvas = null;
+
   inputRef = null;
+
+
   availableThemes = {
     standard: 'GitHub',
     halloween: 'Halloween',
@@ -22,75 +25,78 @@ class App extends Component {
     pink: 'Pink',
     YlGnBu: 'YlGnBu'
   };
+}
 
-  state = {username: 'fireinjun', theme: 'standard'};
+username: 'fireinjun', theme: 'standard'
+_renderError = () =>
+    (<div className = 'App-error' `this.state.error />
+  </div>);
 
-  componentDidMount() {
-    if (this.inputRef) {
-      this.inputRef.focus();
-    }
+componentDidMount() {
+  if (this.inputRef) {
+    this.inputRef.focus();
   }
+}
 
-  // handleUsernameChange = e => {
-  //   this.setState({username: e.target.value});
-  // };
+// handleUsernameChange = e => {
+//   this.setState({username: e.target.value});
+// };
 
-  componentWillMount() {
-    // e.preventDefault();
-    this.setState({loading: true, error: null});
-    fetchData(this.state.username)
-        .then(({data}) => {
-          if (data.years.length === 0) {
-            return this.setState({
-              error: 'Could not find your profile',
-              data: null,
-              loading: false
-            });
-          }
-          this.setState({data, loading: false}, () => {
-            this.draw();
-            // this.inputRef.blur();
+componentWillMount() {
+  // e.preventDefault();
+  this.setState({loading: true, error: null});
+  fetchData(this.state.username)
+      .then(({data}) => {
+        if (data.years.length === 0) {
+          return this.setState({
+            error: 'Could not find your profile',
+            data: null,
+            loading: false
           });
-        })
-        .catch(err => {
-          this.setState({
-            loading: false,
-            error: 'I could not check your profile successfully...'
-          });
+        }
+        this.setState({data, loading: false}, () => {
+          this.draw();
+          // this.inputRef.blur();
         });
-  };
+      })
+      .catch(err => {
+        this.setState({
+          loading: false,
+          error: 'I could not check your profile successfully...'
+        });
+      });
+};
 
-  // handleChangeTheme = e => {
-  //   this.setState({theme: e.target.value}, () => {
-  //     return this.canvas && this.draw();
-  //   });
-  // };
+// handleChangeTheme = e => {
+//   this.setState({theme: e.target.value}, () => {
+//     return this.canvas && this.draw();
+//   });
+// };
 
-  // download = e => {
-  //   e.preventDefault();
-  //   download(this.canvas);
-  // };
+// download = e => {
+//   e.preventDefault();
+//   download(this.canvas);
+// };
 
-  // onShareTwitter = e => {
-  //   e.preventDefault();
-  //   uploadToTwitter(this.canvas);
-  // };
+// onShareTwitter = e => {
+//   e.preventDefault();
+//   uploadToTwitter(this.canvas);
+// };
 
-  draw() {
-    if (!this.canvas) {
-      return this.setState(
-          {error: 'Something went wrong... Check back later.'});
-    }
-    drawContributions(this.canvas, {
-      data: this.state.data,
-      username: this.state.username,
-      themeName: this.state.theme,
-      // footerText: 'Made by @sallar & friends - github-contributions.now.sh'
-    });
+draw() {
+  if (!this.canvas) {
+    return this.setState({error: 'Something went wrong... Check back later.'});
   }
+  drawContributions(this.canvas, {
+    data: this.state.data,
+    username: this.state.username,
+    themeName: this.state.theme,
+    // footerText: 'Made by @sallar & friends - github-contributions.now.sh'
+  });
+}
 
-  render() {
-    return (
+render() {
+  return (
       <div className='App'>
         {/* <header className='App-header'>
         <h1>GitHub Contributions Chart Generator<
@@ -100,64 +106,62 @@ class App extends Component {
             this._renderGithubButton()}<
             /header> */}
         <section className='App-content'>
-          {this.state.loading && this._renderLoading()}
-          {this.state.data !== null &&
-            !this.state.loading &&
+          {this.state.loading&&this._renderLoading()}
+          {this.state.data!==null&&
+            !this.state.loading&&
             this._renderGraphs()}
-          {this.state.error !== null && this._renderError()}
+          {this.state.error!==null&&this._renderError()}
         </section>
-        </div>
+      </div>
     );
-  }
+}
 
-  // _renderThemes = () => {
-  //   return (
-  //     <div className="App-themes">
-  //       {Object.keys(this.availableThemes).map(themeName => (
-  //         <label key={themeName}>
-  //           <input
-  //             type="radio"
-  //             name="theme"
-  //             checked={this.state.theme === themeName}
-  //             value={themeName}
-  //             onChange={this.handleChangeTheme}
-  //           />{
-  //           ' '} {
-  //           this.availableThemes[themeName]}</label>
-  //       ))}
-  //     </div>);
-  // };
+// _renderThemes = () => {
+//   return (
+//     <div className="App-themes">
+//       {Object.keys(this.availableThemes).map(themeName => (
+//         <label key={themeName}>
+//           <input
+//             type="radio"
+//             name="theme"
+//             checked={this.state.theme === themeName}
+//             value={themeName}
+//             onChange={this.handleChangeTheme}
+//           />{
+//           ' '} {
+//           this.availableThemes[themeName]}</label>
+//       ))}
+//     </div>);
+// };
 
-  // _renderGithubButton = () => {
-  //   return (
-  //     <div className='App-github-button'>
-  //         <a
-  //   className = 'github-button'
-  //   href = 'https://github.com/sallar/github-contributions-chart'
-  //   data-size = 'large'
-  //   data-show-count = 'true' >
-  //         Star
-  //       </a>
-  //     </div>
-  //   );
-  // };
+// _renderGithubButton = () => {
+//   return (
+//     <div className='App-github-button'>
+//         <a
+//   className = 'github-button'
+//   href = 'https://github.com/sallar/github-contributions-chart'
+//   data-size = 'large'
+//   data-show-count = 'true' >
+//         Star
+//       </a>
+//     </div>
+//   );
+// };
 
-  _renderLoading = () => {
-    return (
+  _renderLoading=() => (
       <div className='App-loading'>
         <img src={loadingImage} alt='Loading...' width={
-      200} />
+  200} />
         <p>Please wait, I{`'`}m visiting your profile...</p>
       </div>
     );
-  };
 
-  _renderGraphs = () => {
-    return (
+  _renderGraphs=() => (
       <div className="App-result">
         {/* <p>Your chart is ready!</p>
-        <div className='App-buttons'> */}
-          {/* <button
+        <div className='App-buttons'> */
+}
+        {/* <button
     className = 'App-download-button'
             onClick={this.download}
             type='button'
@@ -174,29 +178,22 @@ class App extends Component {
           </button> */}
         {/* </div> */}
 
-        <canvas ref={el => (this.canvas = el)} />
+        <canvas ref={el => (this.canvas=el)} />
       </div>
     );
-};
 
-_renderForm = () => {
-    // -q/>
-        {/* <button type='submit' disabled={
-      this.state.username.length <= 0}>
-          <span role='img' aria-label='Stars'>
-            ✨
-          </span>{' '}
-          Generate!
-        </button>
-      </form>
-    );
-  }; */}
-
-  _renderError=() => {
-    return ({<div className='App-error'}>
-      <{this.stathis.state.errorte.error}>
-      </div>);
-  };
-}
-
-export default App
+        _renderForm = () => {
+          // -q/>
+          { /* <button type='submit' disabled={
+             this.state.username.length <= 0}>
+                 <span role='img' aria-label='Stars'>
+                   ✨
+                 </span>{' '}
+                 Generate!
+               </button>
+             </form>
+           );
+         }; */
+          }
+        }
+        }
