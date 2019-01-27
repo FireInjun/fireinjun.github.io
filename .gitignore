@@ -5,6 +5,8 @@
 /reactRewrite/mykeone/.env
 /.pnp
 .pnp.js
+**/**/node_modules/
+*.env
 
 # testing
 /coverage
