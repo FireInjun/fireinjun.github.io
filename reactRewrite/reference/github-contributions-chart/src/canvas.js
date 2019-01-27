@@ -15,7 +15,12 @@ function getDateInfo(data, date) {
 
 function getContributionCount(graphEntries) {
   return graphEntries.reduce(
-      (rowTotal, row) => (rowTotal + row.reduce((colTotal, col) => colTotal + (col.info ? col.info.count : 0), 0)), 0);
+      (rowTotal, row) =>
+          (rowTotal +
+           row.reduce(
+               (colTotal, col) => colTotal + (col.info ? col.info.count : 0),
+               0)),
+      0);
 }
 
 const DATE_FORMAT = 'YYYY-MM-DD';
@@ -139,9 +144,9 @@ function drawMetaData(ctx, opts = {}) {
   ctx.lineTo(width - canvasMargin, 55);
   ctx.strokeStyle = theme.grade0;
   ctx.stroke();
-}
+};
 
-export function drawContributions(canvas, opts) {
+const drawContributions(canvas, opts) => {
   const {data, username} = opts;
   const height =
       data.years.length * yearHeight + canvasMargin + headerHeight + 10;
@@ -161,4 +166,4 @@ export function drawContributions(canvas, opts) {
     const offsetX = canvasMargin;
     drawYear(ctx, {...opts, year, offsetX, offsetY, data});
   });
-}
+} modules.export[{'username': ''}]
