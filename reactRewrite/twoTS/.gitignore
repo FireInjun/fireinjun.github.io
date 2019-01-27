@@ -1,14 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/reactRewrite/oneJS/node_modules
-/reactRewrite/oneJS/.env
-/reactRewrite/twoTS/node_modules
-/reactRewrite/twoTS/.env
+/node_modules
 /.pnp
 .pnp.js
-**/**/node_modules/
-*.env
 
 # testing
 /coverage
