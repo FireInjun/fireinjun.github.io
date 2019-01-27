@@ -1,0 +1,11 @@
+
+--------------------- ---------------------
+Modified on: 1/25/2019 10:56:41 PM
+
+
+N:\fireinjun.github.io\reactRewrite\twoTS>node  "N:\fireinjun.github.io\reactRewrite\twoTS\node_modules\.bin\\..\tslint\bin\tslint" src/**/*.ts?(x) 
+
+ERROR: src/custom.d.ts:3:18 - Type declaration of 'any' loses type-safety. Consider replacing it with a more precise type.
+
+
+N:\fireinjun.github.io\reactRewrite\twoTS>

@@ -2,7 +2,7 @@
   "name": "twots",
   "version": "0.1.0",
   "private": true,
-  "main": "./src/*.jex",
+  "main": "./src/*.tsx",
   "dependencies": {
     "@types/debug": "^0.0.31",
     "@types/jest": "23.3.13",
