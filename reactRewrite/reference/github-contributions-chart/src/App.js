@@ -7,51 +7,53 @@ import React, {Component} from 'react';
 import loadingImage from './loading.gif';
 import fetchData from './utils/export';
 
-export class App extends Component {
+export default class App extends Component {
   canvas = null;
 
   inputRef = null;
 
 
   availableThemes = {
-    standard: 'GitHub',
-    halloween: 'Halloween',
-    teal: 'Teal',
-    leftPad: '@left_pad',
-    dracula: 'Dracula',
-    blue: 'Blue',
-    panda: 'Panda 🐼',
-    sunny: 'Sunny',
-    pink: 'Pink',
-    YlGnBu: 'YlGnBu'
+    standard  : 'GitHub',
+    halloween : 'Halloween',
+    teal      : 'Teal',
+    leftPad   : '@left_pad',
+    dracula   : 'Dracula',
+    blue      : 'Blue',
+    panda     : 'Panda 🐼',
+    sunny     : 'Sunny',
+    pink      : 'Pink',
+    YlGnBu    : 'YlGnBu'
   };
 }
 
-username: 'fireinjun', theme: 'standard'
-_renderError = () =>
-    (<div className = 'App-error' `this.state.error />
-  </div>);
+// username: 'fireinjun', theme: 'standard'
 
-componentDidMount() {
-  if (this.inputRef) {
-    this.inputRef.focus();
-  }
-}
+const componentDidMount =
+    () => {
+      if (this.inputRef) {
+        this.inputRef.focus();
+      }
+    }
+
+const _renderError = () =>
+    (<div className = 'App-error'><p>{this.state.error}</p>
+  </div>)
 
 // handleUsernameChange = e => {
 //   this.setState({username: e.target.value});
 // };
 
-componentWillMount() {
+const componentWillMount = () => {
   // e.preventDefault();
   this.setState({loading: true, error: null});
   fetchData(this.state.username)
       .then(({data}) => {
         if (data.years.length === 0) {
           return this.setState({
-            error: 'Could not find your profile',
-            data: null,
-            loading: false
+            error   : 'Could not find your profile',
+            data    : null,
+            loading : false
           });
         }
         this.setState({data, loading: false}, () => {
@@ -61,8 +63,8 @@ componentWillMount() {
       })
       .catch(err => {
         this.setState({
-          loading: false,
-          error: 'I could not check your profile successfully...'
+          loading : false,
+          error   : 'I could not check your profile successfully...'
         });
       });
 };
@@ -83,20 +85,19 @@ componentWillMount() {
 //   uploadToTwitter(this.canvas);
 // };
 
-draw() {
+draw=() =>{
   if (!this.canvas) {
     return this.setState({error: 'Something went wrong... Check back later.'});
   }
   drawContributions(this.canvas, {
-    data: this.state.data,
-    username: this.state.username,
-    themeName: this.state.theme,
+    data      : this.state.data,
+    username  : this.state.username,
+    themeName : this.state.theme,
     // footerText: 'Made by @sallar & friends - github-contributions.now.sh'
   });
 }
 
-render() {
-  return (
+render=()=> (
       <div className='App'>
         {/* <header className='App-header'>
         <h1>GitHub Contributions Chart Generator<
@@ -113,8 +114,7 @@ render() {
           {this.state.error!==null&&this._renderError()}
         </section>
       </div>
-    );
-}
+    )
 
 // _renderThemes = () => {
 //   return (
@@ -160,7 +160,7 @@ render() {
       <div className="App-result">
         {/* <p>Your chart is ready!</p>
         <div className='App-buttons'> */
-}
+  }
         {/* <button
     className = 'App-download-button'
             onClick={this.download}
@@ -182,18 +182,18 @@ render() {
       </div>
     );
 
-        _renderForm = () => {
-          // -q/>
-          { /* <button type='submit' disabled={
-             this.state.username.length <= 0}>
-                 <span role='img' aria-label='Stars'>
-                   ✨
-                 </span>{' '}
-                 Generate!
-               </button>
-             </form>
-           );
-         }; */
-          }
-        }
-        }
+        // _renderForm = () => {
+        // -q/>
+        //  {  <button type='submit' disabled={
+        /*   this.state.username.length <= 0}>
+               <span role='img' aria-label='Stars'>
+                 ✨
+               </span>{' '}
+               Generate!
+             </button>
+           </form>
+         );
+       }; */
+        // }
+        // }
+        // }
