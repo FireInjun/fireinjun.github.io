@@ -1,14 +1,14 @@
-export const explainmodules = () => {
-  __test__: {
-    background: '#ffffff',
-    text: '#ffffff',
-    meta: '#ffffff',
-    grade4: '#196127',
-    grade3: '#239a3b',
-    grade2: '#7bc96f',
-    grade1: '#c6e48b',
-    grade0: '#ebedf0'
-  },
+const explainmodules = {
+
+  background: '#ffffff',
+  text: '#ffffff',
+  meta: '#ffffff',
+  grade4: '#196127',
+  grade3: '#239a3b',
+  grade2: '#7bc96f',
+  grade1: '#c6e48b',
+  grade0: '#ebedf0'
+},
       standard: {
         background: '#ffffff',
         text: '#000000',
@@ -68,7 +68,8 @@ export const explainmodules = () => {
         grade2: '#344E6C',
         grade1: '#263342',
         grade0: '#222222'
-      } panda: {
+      },
+      panda: {
         background: '#2B2C2F',
         text: '#E6E6E6',
         meta: '#676B79',
@@ -107,4 +108,5 @@ export const explainmodules = () => {
         grade1: '#a1dab4',
         grade0: '#ebedf0'
       },
-};
+}
+;
